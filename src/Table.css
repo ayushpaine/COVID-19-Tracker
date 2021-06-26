@@ -1,0 +1,24 @@
+.table {
+    position: relative;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 500px;
+    color: rgba(68, 68, 68, 0.829);
+    width: 30vw;
+}
+
+.table tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table td {
+    padding: 0.5rem;
+}
+
+@media only screen and (max-width: 1023px) {
+    .table {
+        width: 60vw;
+        height: 75vh;
+    }
+}
