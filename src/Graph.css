@@ -1,4 +1,5 @@
-canvas {
-    width: 35vw;
-    height: 40vh;
+.chart-container {
+    height: 55vh;
+    width: 55vw;
+    position: relative;
 }

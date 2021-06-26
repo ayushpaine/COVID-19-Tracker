@@ -4,7 +4,8 @@ import numeral from "numeral";
 import "./Graph.css";
 
 const options = {
-  maintainAspectRatio: true,
+  maintainAspectRatio: false,
+
   legend: {
     display: false,
   },
@@ -83,7 +84,7 @@ function LineGraph({ casesType = "cases" }) {
   }, [casesType]);
 
   return (
-    <div>
+    <div className="chart-container">
       {data?.length > 0 && (
         <Line
           data={{

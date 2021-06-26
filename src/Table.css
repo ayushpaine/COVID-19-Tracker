@@ -16,9 +16,9 @@
     padding: 0.5rem;
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 1079px) {
     .table {
         width: 60vw;
-        height: 75vh;
+        height: 95vh;
     }
 }

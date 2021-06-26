@@ -22,6 +22,9 @@ const useStyles = makeStyles({
     border: 0,
     borderRadius: 3,
     color: "#27313A",
+    height: 100,
+    width: 200,
+    borderRadius: 6,
     boxShadow: " -5px 3px 82px -6px rgba(	144, 202, 249,0.);",
   },
 });
@@ -110,16 +113,19 @@ function App() {
           title="Coronavirus Cases"
           cases={countryInfo.todayCases}
           total={countryInfo.cases}
+          value="1"
         />
         <Stats
           title="Coronavirus Recovered"
           cases={countryInfo.todayRecovered}
           total={countryInfo.recovered}
+          value="2"
         />
         <Stats
           title="Coronavirus Deaths"
           cases={countryInfo.todayDeaths}
           total={countryInfo.deaths}
+          value="3"
         />
       </div>
       <CasesMap center={mapCenter} zoom={mapZoom} />

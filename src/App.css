@@ -33,6 +33,7 @@ body {
     align-items: center;
     padding-bottom: 5%;
     padding-top: 5%;
+    margin: 10px;
 }
 
 .live-graph {
@@ -40,10 +41,10 @@ body {
     width: fit-content;
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 1079px) {
     .live {
         display: grid;
-        grid-template-columns: 40%;
+        grid-template-columns: 70%;
         place-items: center;
         row-gap: 5%;
         padding-bottom: 5%;
