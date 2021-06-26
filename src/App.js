@@ -93,6 +93,7 @@ function App() {
               select
               label="Select"
               variant="filled"
+              onChange={onCountryChange}
               className={classes.root}
               helperText="Select Your Country"
             >
