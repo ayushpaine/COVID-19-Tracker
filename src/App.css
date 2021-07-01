@@ -54,3 +54,13 @@ body {
         width: 80vw;
     }
 }
+
+@media only screen and (max-width: 765px) {
+    .stats {
+        display: grid;
+        grid-template-columns: auto;
+        place-items: center;
+        justify-content: center;
+        height: 40%;
+    }
+}

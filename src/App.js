@@ -15,6 +15,7 @@ import Table from "./Table";
 import { sortData } from "./sort";
 import LineGraph from "./Graph";
 import "leaflet/dist/leaflet.css";
+import { statStyle } from "./statStyle";
 
 const useStyles = makeStyles({
   root: {
@@ -22,8 +23,8 @@ const useStyles = makeStyles({
     border: 0,
     borderRadius: 3,
     color: "#27313A",
-    height: 100,
-    width: 200,
+    height: 80,
+    width: 280,
     borderRadius: 6,
     boxShadow: " -5px 3px 82px -6px rgba(	144, 202, 249,0.);",
   },
@@ -32,10 +33,12 @@ const useStyles = makeStyles({
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState("worldwide");
+  const [mapCountries, setMapCountries] = useState([]);
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
-  const [mapCenter, setMapCenter] = useState({ lat: 23, lng: 78.9629 });
-  const [mapZoom, setMapZoom] = useState(4.2);
+  const [mapCenter, setMapCenter] = useState({ lat: 40.3, lng: 10 });
+  const [mapZoom, setMapZoom] = useState(2.4);
+  const [caseType, setCaseType] = useState("cases");
 
   useEffect(() => {
     fetch("https://disease.sh/v3/covid-19/all")
@@ -57,7 +60,7 @@ function App() {
 
           let sortedData = sortData(data);
           setTableData(sortedData);
-
+          setMapCountries(data);
           setCountries(countries);
         });
     };
@@ -110,25 +113,36 @@ function App() {
       </div>
       <div className="stats">
         <Stats
+          isGrey
+          active={caseType === "cases"}
+          onClick={(e) => setCaseType("cases")}
           title="Coronavirus Cases"
-          cases={countryInfo.todayCases}
-          total={countryInfo.cases}
-          value="1"
+          cases={statStyle(countryInfo.todayCases)}
+          total={statStyle(countryInfo.cases)}
         />
         <Stats
+          isGreen
+          active={caseType === "recovered"}
+          onClick={(e) => setCaseType("recovered")}
           title="Coronavirus Recovered"
-          cases={countryInfo.todayRecovered}
-          total={countryInfo.recovered}
-          value="2"
+          cases={statStyle(countryInfo.todayRecovered)}
+          total={statStyle(countryInfo.recovered)}
         />
         <Stats
+          isRed
+          active={caseType === "deaths"}
+          onClick={(e) => setCaseType("deaths")}
           title="Coronavirus Deaths"
-          cases={countryInfo.todayDeaths}
-          total={countryInfo.deaths}
-          value="3"
+          cases={statStyle(countryInfo.todayDeaths)}
+          total={statStyle(countryInfo.deaths)}
         />
       </div>
-      <CasesMap center={mapCenter} zoom={mapZoom} />
+      <CasesMap
+        center={mapCenter}
+        zoom={mapZoom}
+        countries={mapCountries}
+        caseType={caseType}
+      />
       <div className="live">
         <Card className="live-card">
           <CardContent>
@@ -138,7 +152,10 @@ function App() {
         </Card>
         <Card className="live-graph">
           <CardContent>
-            <LineGraph />
+            <h3 style={{ textTransform: `capitalize` }}>
+              Worldwide New {caseType}
+            </h3>
+            <LineGraph className="graph-fill" casesType={caseType} />
           </CardContent>
         </Card>
       </div>

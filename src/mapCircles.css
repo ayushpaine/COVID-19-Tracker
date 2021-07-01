@@ -1,0 +1,27 @@
+.popup-container {
+    display: flex;
+    flex-direction: row-reverse;
+    width: fit-content;
+}
+
+.flag-container img {
+    width: auto;
+    height: 90px;
+    border-radius: 6px;
+    margin: 5px;
+}
+
+.map-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(44, 48, 46);
+}
+
+.map-cases,
+.map-recovered,
+.map-deaths {
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: 700;
+    color: rgb(100, 100, 100);
+}

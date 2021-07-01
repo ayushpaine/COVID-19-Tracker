@@ -1,0 +1,45 @@
+.statCard {
+    flex-grow: 1;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.statCases {
+    color: rgb(100, 100, 100);
+    font-weight: 700;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.div-change {
+    animation: anim1 0.3s forwards ease-in-out;
+}
+
+.statChange {
+    animation: anim 0.3s forwards ease-in-out;
+}
+
+@keyframes anim {
+    to {
+        border-left: solid 10px #a0d4ff;
+    }
+}
+
+@keyframes anim1 {
+    to {
+        padding-left: 10px;
+    }
+}
+
+.statTotal {
+    color: rgb(102, 102, 102) !important;
+    font-weight: 700 !important;
+}
+
+.statGreen {
+    color: rgb(65, 199, 65);
+}
+
+.statRed {
+    color: rgb(255, 60, 60);
+}

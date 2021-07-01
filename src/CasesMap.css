@@ -12,3 +12,14 @@
     height: 100%;
     width: 100%;
 }
+
+@media only screen and (max-width: 765px) {
+    .map {
+        height: 75vh;
+        width: 78vw;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
+}
