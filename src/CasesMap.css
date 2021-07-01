@@ -1,11 +1,13 @@
 .map {
-    height: 80vh;
-    background-color: rgb(206, 232, 255);
+    height: 70vh;
+    width: 80vw;
+    background-color: rgb(10, 29, 46);
     padding: 1em;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
     border-radius: 6px;
-    margin: 2em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .map .leaflet-container {

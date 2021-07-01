@@ -6,15 +6,14 @@ import "./Graph.css";
 const options = {
   maintainAspectRatio: false,
 
+  elements: {
+    point: {
+      radius: 2,
+    },
+  },
   legend: {
     display: false,
   },
-  elements: {
-    point: {
-      radius: 0,
-    },
-  },
-
   tooltips: {
     mode: "index",
     intersect: false,
@@ -40,7 +39,7 @@ const options = {
           display: false,
         },
         ticks: {
-          callback: function (value, index, values) {
+          callback: function (value) {
             return numeral(value).format("0a");
           },
         },
@@ -84,14 +83,16 @@ function LineGraph({ casesType = "cases", ...props }) {
   }, [casesType]);
 
   return (
-    <div className={props.className}>
+    <div className="graph-fill">
       {data?.length > 0 && (
         <Line
           data={{
             datasets: [
               {
-                backgroundColor: "rgba(204, 16, 52, 0.5)",
-                borderColor: "rgba(204, 16, 52, 0.5)",
+                label: [],
+                fill: "start",
+                borderColor: "rgba(204, 16, 52, 1)",
+                backgroundColor: "rgba(204,16,52,0.2)",
                 data: data,
               },
             ],

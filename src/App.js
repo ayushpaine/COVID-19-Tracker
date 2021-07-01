@@ -155,9 +155,13 @@ function App() {
             <h3 style={{ textTransform: `capitalize` }}>
               Worldwide New {caseType}
             </h3>
+
             <LineGraph className="graph-fill" casesType={caseType} />
           </CardContent>
         </Card>
+        <div>
+          <br />
+        </div>
       </div>
     </>
   );

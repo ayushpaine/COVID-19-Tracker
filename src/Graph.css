@@ -1,14 +1,13 @@
 .graph-fill {
     height: 55vh;
     width: 55vw;
-    position: relative;
     display: flex;
     flex-grow: 1;
 }
 
 @media only screen and (max-width: 765px) {
     .graph-fill {
-        width: 100%;
-        height: fit-content;
+        width: 75vw;
+        height: 35vh;
     }
 }
