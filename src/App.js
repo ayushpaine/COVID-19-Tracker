@@ -26,7 +26,7 @@ const useStyles = makeStyles({
     height: 80,
     width: 280,
     borderRadius: 6,
-    boxShadow: " -5px 3px 82px -6px rgba(	144, 202, 249,0.);",
+    boxShadow: " -5px 3px 82px -6px rgba(	144, 202, 249,0.2);",
   },
 });
 
@@ -150,15 +150,15 @@ function App() {
             <Table countries={tableData} />
           </CardContent>
         </Card>
-        <Card className="live-graph">
-          <CardContent>
+        <div className="container">
+          <div className="card-info">
             <h3 style={{ textTransform: `capitalize` }}>
               Worldwide New {caseType}
             </h3>
 
             <LineGraph className="graph-fill" casesType={caseType} />
-          </CardContent>
-        </Card>
+          </div>
+        </div>
         <div>
           <br />
         </div>

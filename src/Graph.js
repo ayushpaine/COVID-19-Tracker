@@ -4,6 +4,7 @@ import numeral from "numeral";
 import "./Graph.css";
 
 const options = {
+  responsive: true,
   maintainAspectRatio: false,
 
   elements: {
@@ -91,8 +92,8 @@ function LineGraph({ casesType = "cases", ...props }) {
               {
                 label: [],
                 fill: "start",
-                borderColor: "rgba(204, 16, 52, 1)",
-                backgroundColor: "rgba(204,16,52,0.2)",
+                borderColor: "rgb(39, 49, 90,0.8)",
+                backgroundColor: "rgb(144,202,249,0.5)",
                 data: data,
               },
             ],
