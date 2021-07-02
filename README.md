@@ -1,3 +1,6 @@
+# COVID-19 Tracker
+The project uses an api from https://disease.sh/ to render the total number of COVID-19 cases globally as well as in individual countries using a chart and displays the number of cases of each country relatively on the world map. Hope someone finds this useful :D
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
