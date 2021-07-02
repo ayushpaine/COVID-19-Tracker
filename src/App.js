@@ -157,6 +157,8 @@ function App() {
             </h3>
 
             <LineGraph className="graph-fill" casesType={caseType} />
+            <br />
+            <br />
           </div>
         </div>
         <div>
